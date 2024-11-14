@@ -1,12 +1,15 @@
-// JavaScript: Interactive and Smooth Scrolling
-
 // Smooth scrolling for navigation links
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const href = this.getAttribute('href');
+        
+        // Only apply smooth scrolling if the link is internal
+        if (href.startsWith("#")) {
+            e.preventDefault();
+            document.querySelector(href).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
