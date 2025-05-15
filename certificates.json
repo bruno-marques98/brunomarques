@@ -24,11 +24,10 @@
     { "file": "secureCoding.pdf", "desc": "Secure Coding" },
     { "file": "SourceGenerators.pdf", "desc": "C# Source Generators" },
     { "file": "strinManipulation.pdf", "desc": "C# String Manipulation" },
-    { "file": "whatIsNewInC#10.pdf", "desc": "What Is New In C# 10" },
+    { "file": "whatIsNewInC10.pdf", "desc": "What Is New In C# 10" },
     { "file": "WorkingWithFiles.pdf", "desc": "C# Working With Files" },
 
     { "file": "fcc_web_des_cer.png", "desc": "FreeCodeCamp Web Design" },
     { "file": "freecodecamp_certifiate.png", "desc": "FreeCodeCamp Certificate" },
-    { "file": "certificado_excel.png", "desc": "Excel Certificate" },
-    { "file": "some_certificate.pdf", "desc": "PDF Certificate" }
+    { "file": "certificado_excel.png", "desc": "Excel Certificate" }
 ]
