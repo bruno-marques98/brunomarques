@@ -19,23 +19,9 @@
     </header>
 
     <main>
-        <section id="certificate-display">
-            <div class="certificate">
-                <img src="./images/fcc_web_des_cer.png" alt="Certificate FreeCodeCamp Web Design">
-                <p>FreeCodeCamp Web Design Certificate</p>
-            </div>
-            <div class="certificate">
-                <img src="./images/freecodecamp_certifiate.png" alt="Certificate FreeCodeCamp">
-                <p>FreeCodeCamp Certificate</p>
-            </div>
-            <div class="certificate">
-                <img src="./images/certificado_excel.png" alt="Certificate Deloitte Excel">
-                <p>Excel Certificate</p>
-            </div>
-        </section>
+        <section id="certificate-display" class="fade-in"></section>
     </main>
     
-
     <footer>
         <div class="social-links">
             <a href="mailto:bruno98silva@email.com"><i class="fas fa-envelope"></i></a>
@@ -44,5 +30,45 @@
             <a href="https://github.com/bruno-marques98" target="_blank"><i class="fab fa-github"></i></a>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const display = document.getElementById("certificate-display");
+    
+            try {
+                const res = await fetch('certificates.json');
+                const certs = await res.json();
+    
+                certs.forEach(cert => {
+                    const ext = cert.file.split('.').pop().toLowerCase();
+                    const div = document.createElement('div');
+                    div.classList.add('certificate');
+    
+                    if (ext === 'pdf') {
+                        const embed = document.createElement('embed');
+                        embed.src = `./images/${cert.file}`;
+                        embed.type = "application/pdf";
+                        embed.width = "300";
+                        embed.height = "400";
+                        div.appendChild(embed);
+                    } else {
+                        const img = document.createElement('img');
+                        img.src = `./images/${cert.file}`;
+                        img.alt = cert.desc;
+                        div.appendChild(img);
+                    }
+    
+                    const p = document.createElement('p');
+                    p.textContent = cert.desc;
+                    div.appendChild(p);
+    
+                    display.appendChild(div);
+                });
+            } catch (err) {
+                display.innerHTML = "<p>Failed to load certificates.</p>";
+                console.error("Error loading certificates:", err);
+            }
+        });
+        </script>
 </body>
 </html>
