@@ -96,8 +96,8 @@ main {
 
 /* Add padding offset for header navigation */
 #about, #experience, #projects, #skills {
-    padding-top: 80px; /* Matches header height */
-    margin-top: -80px; /* Avoid extra spacing */
+    padding-top: 80px;
+    margin-top: -80px;
 }
 
 /* =====================
@@ -126,7 +126,7 @@ footer {
     position: relative;
     background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
     color: #fff;
-    padding: 30px 20px;
+    padding: 40px 20px;
     text-align: center;
     opacity: 0;
     animation: fadeInFooter 1.2s ease forwards;
@@ -136,10 +136,10 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
 }
 
-/* Glowing line at top of footer */
+/* Glowing animated line */
 footer::before {
     content: "";
     position: absolute;
@@ -156,22 +156,74 @@ footer::before {
     100% { transform: translateX(50%); }
 }
 
-/* Social icons */
-.social-icons a {
-    color: #bbb;
-    margin: 0 12px;
-    font-size: 1.6rem;
-    transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
-    opacity: 0.8;
+/* =====================
+   Footer Buttons & Icons
+===================== */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-.social-icons a:hover {
-    color: #00bcd4;
-    transform: translateY(-4px) scale(1.1);
+.social-icons a,
+.social-icons button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+/* Hover and active states (unified for icons + button) */
+.social-icons a:hover,
+.social-icons button:hover {
+    background: linear-gradient(135deg, #66BB6A, #1B5E20);
+    color: #fff;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     opacity: 1;
 }
 
-/* Fade-in animation for footer */
+.social-icons a:active,
+.social-icons button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon inside button */
+.social-icons i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* Individual social colors on hover for icons */
+.social-icons a[href*="linkedin"]:hover {
+    background: linear-gradient(135deg, #0077b5, #004471);
+}
+
+.social-icons a[href*="github"]:hover {
+    background: linear-gradient(135deg, #333, #000);
+}
+
+.social-icons a[href*="mailto"]:hover {
+    background: linear-gradient(135deg, #ff9800, #e65100);
+}
+
+/* =====================
+   Footer Animation
+===================== */
 @keyframes fadeInFooter {
     from {
         opacity: 0;
@@ -194,5 +246,10 @@ footer::before {
     .skills-container {
         flex-direction: column;
         text-align: center;
+    }
+
+    .social-icons {
+        flex-direction: column;
+        gap: 10px;
     }
 }
