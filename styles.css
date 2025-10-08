@@ -122,31 +122,32 @@ footer {
     opacity: 0;
     animation: fadeIn 1.2s ease-in forwards;
 }
-/* Footer Export to PDF Button */
+/* Footer Export to PDF Button (Homogeneous Style) */
 footer .social-links button {
-    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    background-color: #444; /* Matches general text tone */
     color: white;
-    border: none;
-    border-radius: 25px;
-    padding: 12px 24px;
-    font-size: 16px;
+    border: 2px solid #ffd700; /* Same gold tone as hover links */
+    border-radius: 30px;
+    padding: 10px 22px;
+    font-size: 15px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-left: 10px;
 }
 
 footer .social-links button:hover {
+    background-color: #ffd700;
+    color: #333;
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(135deg, #66BB6A, #1B5E20);
+    box-shadow: 0 6px 18px rgba(255, 215, 0, 0.3);
 }
 
 footer .social-links button:active {
     transform: translateY(1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
-
 
 @keyframes fadeIn {
     from {
