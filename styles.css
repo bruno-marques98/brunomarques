@@ -1,4 +1,6 @@
-/* General Styles */
+/* =====================
+   General Styles
+===================== */
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
@@ -8,7 +10,9 @@ body {
     background-color: #f5f5f5;
 }
 
-/* Header */
+/* =====================
+   Header
+===================== */
 header {
     background-color: rgba(51, 51, 51, 0.9);
     color: white;
@@ -54,7 +58,9 @@ nav ul li a:hover {
     color: #ffd700;
 }
 
-/* Main Sections */
+/* =====================
+   Main Sections
+===================== */
 main {
     padding: 40px 20px;
 }
@@ -88,75 +94,52 @@ main {
     margin: 0 auto;
 }
 
-/* Footer */
-/* Footer Social Links and Button — Unified Style */
-footer .social-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
+/* Add padding offset for header navigation */
+#about, #experience, #projects, #skills {
+    padding-top: 80px; /* Matches header height */
+    margin-top: -80px; /* Avoid extra spacing */
 }
 
-/* Shared base style for icons and button */
-footer .social-links a,
-footer .social-links button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #444;
-    color: white;
-    border: 2px solid #ffd700;
-    border-radius: 30px;
-    padding: 10px 16px;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-}
-
-/* Hover & active states */
-footer .social-links a:hover,
-footer .social-links button:hover {
-    background-color: #ffd700;
-    color: #333;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(255, 215, 0, 0.3);
-}
-
-footer .social-links a:active,
-footer .social-links button:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* Icon spacing inside button */
-footer .social-links button i {
-    margin-right: 8px;
-    color: inherit;
-}
-/* Alternative: Add padding at the top of sections */
-#about, #experience, #projects ,#skills {
-    padding-top: 80px; /* Adjust this to match the header height */
-    margin-top: -80px; /* Offset to avoid extra spacing */
-}
-
-/* Animations */
+/* =====================
+   Animations
+===================== */
 .fade-in {
     opacity: 0;
     animation: fadeIn 1.2s ease-in forwards;
 }
-/* Footer Area */
-footer {
-    position: relative;
-    background-color: #222;
-    color: white;
-    padding: 30px 10px;
-    text-align: center;
-    overflow: hidden;
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+/* =====================
+   Footer
+===================== */
+footer {
+    position: relative;
+    background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInFooter 1.2s ease forwards;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Glowing line at top of footer */
 footer::before {
     content: "";
     position: absolute;
@@ -173,42 +156,26 @@ footer::before {
     100% { transform: translateX(50%); }
 }
 
-/* Footer Export to PDF Button (Homogeneous Style) */
-footer .social-links button {
-    background-color: #444; /* Matches general text tone */
-    color: white;
-    border: 2px solid #ffd700; /* Same gold tone as hover links */
-    border-radius: 30px;
-    padding: 10px 22px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    margin-left: 10px;
+/* Social icons */
+.social-icons a {
+    color: #bbb;
+    margin: 0 12px;
+    font-size: 1.6rem;
+    transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+    opacity: 0.8;
 }
 
-footer .social-links button:hover {
-    background-color: #ffd700;
-    color: #333;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(255, 215, 0, 0.3);
+.social-icons a:hover {
+    color: #00bcd4;
+    transform: translateY(-4px) scale(1.1);
+    opacity: 1;
 }
 
-footer .social-links button:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-footer .social-links button i {
-    margin-right: 8px;
-    color: inherit;
-}
-
-
-@keyframes fadeIn {
+/* Fade-in animation for footer */
+@keyframes fadeInFooter {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -216,7 +183,9 @@ footer .social-links button i {
     }
 }
 
-/* Responsive Design */
+/* =====================
+   Responsive Design
+===================== */
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
