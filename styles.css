@@ -147,6 +147,32 @@ footer .social-links button i {
     opacity: 0;
     animation: fadeIn 1.2s ease-in forwards;
 }
+/* Footer Area */
+footer {
+    position: relative;
+    background-color: #222;
+    color: white;
+    padding: 30px 10px;
+    text-align: center;
+    overflow: hidden;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ffd700, transparent);
+    animation: footer-glow 5s linear infinite;
+}
+
+@keyframes footer-glow {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(50%); }
+}
+
 /* Footer Export to PDF Button (Homogeneous Style) */
 footer .social-links button {
     background-color: #444; /* Matches general text tone */
