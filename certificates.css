@@ -5,38 +5,116 @@ body {
     padding: 0;
 }
 
+/* HEADER */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
+  background: rgba(25, 25, 25, 0.85);
+  backdrop-filter: blur(8px);
+  color: white;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+header.scrolled {
+  background: rgba(15, 15, 15, 0.95);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .header-content {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+/* Logo */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #00bfa6;
+  text-shadow: 0 0 10px rgba(0, 191, 166, 0.5);
+  transition: text-shadow 0.3s ease, transform 0.3s ease;
 }
 
-header nav ul li {
-    display: inline;
-    margin-right: 20px;
+.logo:hover {
+  text-shadow: 0 0 20px rgba(0, 191, 166, 0.8);
+  transform: scale(1.05);
 }
 
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
 }
 
-header nav ul li a:hover {
-    text-decoration: underline;
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #eaeaea;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  padding: 8px 0;
+  position: relative;
+}
+
+/* Cool underline hover effect */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #00bfa6, #007bff);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+nav ul li a:hover {
+  color: #00bfa6;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 main {
