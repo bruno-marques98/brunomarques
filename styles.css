@@ -122,6 +122,52 @@ nav ul li a:hover::after {
  main {
      padding: 40px 20px;
 }
+
+/* Section Headings */
+section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #eaeaea;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: sectionTitleFade 0.7s ease forwards;
+}
+
+/* Gradient underline */
+section h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #00bfa6, #007bff);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+/* Hover effect (beautiful subtle highlight) */
+section h2:hover {
+    text-shadow: 0 0 10px rgba(0, 191, 166, 0.5);
+}
+
+/* Hover underline animation */
+section h2:hover::after {
+    width: 100%;
+}
+
+/* Entry animation */
+@keyframes sectionTitleFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* About Section */
  .about-content {
      display: flex;
