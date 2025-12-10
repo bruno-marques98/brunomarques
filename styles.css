@@ -125,6 +125,15 @@ nav ul li a:hover::after {
 
 /* Section Headings */
 section h2 {
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 4px solid #00bfa6;
+    border-radius: 4px;
+    backdrop-filter: blur(2px);
+}
+
+/* Gradient underline */
+section h2::after {
     content: "";
     position: absolute;
     left: 0;
@@ -136,13 +145,7 @@ section h2 {
     transition: width 0.5s ease;
 }
 
-/* Gradient underline */
-section h2::after {
-    content: "↗";
-    opacity: 0;
-    margin-left: 8px;
-    transition: 0.3s;
-}
+/* Hover effect (beautiful subtle highlight) */
 section h2:hover {
     text-shadow: 0 0 10px rgba(0, 191, 166, 0.5);
 }
