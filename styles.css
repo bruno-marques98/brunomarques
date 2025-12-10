@@ -125,16 +125,11 @@ nav ul li a:hover::after {
 
 /* Section Headings */
 section h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #eaeaea;
-    margin-bottom: 20px;
-    position: relative;
-    display: inline-block;
-    letter-spacing: 1px;
-    opacity: 0;
-    transform: translateY(10px);
-    animation: sectionTitleFade 0.7s ease forwards;
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 4px solid #00bfa6;
+    border-radius: 4px;
+    backdrop-filter: blur(2px);
 }
 
 /* Gradient underline */
