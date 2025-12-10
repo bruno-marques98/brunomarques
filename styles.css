@@ -125,11 +125,15 @@ nav ul li a:hover::after {
 
 /* Section Headings */
 section h2 {
-    padding: 8px 15px;
-    background: rgba(255, 255, 255, 0.03);
-    border-left: 4px solid #00bfa6;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #00bfa6, #007bff);
     border-radius: 4px;
-    backdrop-filter: blur(2px);
+    transition: width 0.5s ease;
 }
 
 /* Gradient underline */
@@ -139,8 +143,8 @@ section h2::after {
     margin-left: 8px;
     transition: 0.3s;
 }
-section:hover h2::after {
-    opacity: 1;
+section h2:hover {
+    text-shadow: 0 0 10px rgba(0, 191, 166, 0.5);
 }
 
 /* Hover underline animation */
