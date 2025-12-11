@@ -190,10 +190,12 @@ h2 {
 /* ----------------------------- */
 
 footer {
-    background-color: #222;
+    background-color: #333;
     color: white;
-    padding: 20px;
-    text-align: center;
+    padding: 10px 20px;
+    position: static; /* instead of fixed */
+    bottom: 0;
+    width: 100%;
     margin-top: 40px;
 }
 
