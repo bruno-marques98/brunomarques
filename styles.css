@@ -310,6 +310,29 @@ section h2:hover::after {
      opacity: 0;
      animation: fadeIn 1.2s ease-in forwards;
 }
+.cv-download-btn {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.cv-download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #66BB6A, #1B5E20);
+}
+
 /* Footer Area */
  footer {
      background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
