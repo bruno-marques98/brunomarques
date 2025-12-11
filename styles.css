@@ -162,6 +162,53 @@ section h2:hover::after {
         transform: translateY(0);
     }
 }
+/* Expandable section */
+.expandable {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.expandable:hover {
+    background: rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+}
+
+/* Header row */
+.expandable-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Arrow */
+.expandable .arrow {
+    transition: transform 0.3s ease;
+    font-size: 18px;
+}
+
+/* Rotate arrow when open */
+.expandable.open .arrow {
+    transform: rotate(180deg);
+}
+
+/* Hidden content area */
+.expandable-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+/* Visible when open */
+.expandable.open .expandable-content {
+    max-height: 300px; /* Adjust for larger text */
+    opacity: 1;
+}
+
 
 /* About Section */
  .about-content {
