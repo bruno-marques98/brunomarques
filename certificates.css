@@ -169,14 +169,15 @@ h2 {
 }
 
 /* PDF/IMG inside card */
-.certificate img,
-.certificate embed {
+.certificate embed,
+.certificate iframe,
+.certificate img {
     width: 100%;
     height: auto;
-    max-height: 380px;
-    border-radius: 8px;
-    object-fit: contain;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    /* Remove height limit */
+    max-height: none;
 }
 
 .certificate p {
