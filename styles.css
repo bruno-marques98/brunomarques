@@ -130,6 +130,8 @@ section h2 {
     border-left: 4px solid #00bfa6;
     border-radius: 4px;
     backdrop-filter: blur(2px);
+    cursor: default;
+    pointer-events: none;
 }
 
 /* Gradient underline */
