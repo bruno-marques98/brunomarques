@@ -23,5 +23,16 @@ header.scrolled {
   justify-content: space-between;
   align-items: center;
 }
+/* Responsive */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+  }
 
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 
