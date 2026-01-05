@@ -45,10 +45,12 @@
 }
 
 .contact-intro h2 {
+    text-align: center;
     margin-bottom: 10px;
 }
 
 .contact-intro p {
+    text-align: center;
     color: #555;
     line-height: 1.6;
     font-size: 15px;
