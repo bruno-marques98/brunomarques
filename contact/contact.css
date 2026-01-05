@@ -21,7 +21,7 @@
 }
 
 .contact-form button {
-    align-self: flex-start;
+    align-self: center;
     background: linear-gradient(135deg, #00bfa6, #007bff);
     color: white;
     border: none;
