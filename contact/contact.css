@@ -1,6 +1,6 @@
 .contact-form {
     max-width: 600px;
-    margin: 0 auto 80px;
+    margin: 5% auto;
     display: flex;
     flex-direction: column;
     gap: 15px;
